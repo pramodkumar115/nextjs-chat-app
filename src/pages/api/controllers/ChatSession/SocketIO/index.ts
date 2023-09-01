@@ -2,8 +2,8 @@ import {Server as ServerIO} from 'socket.io';
 import {createServer} from 'http';
 import { createRouter } from 'next-connect';
 import { NextApiRequest, NextApiResponse } from 'next';
-import { logger, ncOptions } from '@/pages/lib/middlewares';
-import { database } from '@/pages/lib/mongo';
+import { logger, ncOptions } from '@/server/lib/middlewares';
+import { database } from '@/server/lib/mongo';
 
 export const config = {
     api: {

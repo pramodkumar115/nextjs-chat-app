@@ -1,8 +1,8 @@
 import { NextApiRequest, NextApiResponse } from "next";
-import UserService from "@/pages/api/services/user.services";
+import UserService from "@/server/services/user.services";
 import { createRouter } from "next-connect"
-import { logger, ncOptions } from '@/pages/lib/middlewares';
-import { database } from "@/pages/lib/mongo";
+import { logger, ncOptions } from '@/server/lib/middlewares';
+import { database } from "@/server/lib/mongo";
 import { cookies } from 'next/headers'
 
 

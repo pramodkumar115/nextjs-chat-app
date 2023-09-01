@@ -2,14 +2,14 @@
 import { useRouter } from 'next/navigation';
 import React from "react";
 import { useCookies } from 'react-cookie';
-import Button from "../commons/Button";
-import Card from "../commons/Card";
-import CardContent from "../commons/CardContent";
-import CardFooter from "../commons/CardFooter";
-import CardHeader from "../commons/CardHeader";
-import InputPassword from "../commons/InputPassword";
-import InputText from "../commons/InputText";
-import { toast } from '../commons/Toast';
+import Button from "../../ui-components/commons/Button";
+import Card from "../../ui-components/commons/Card";
+import CardContent from "../../ui-components/commons/CardContent";
+import CardFooter from "../../ui-components/commons/CardFooter";
+import CardHeader from "../../ui-components/commons/CardHeader";
+import InputPassword from "../../ui-components/commons/InputPassword";
+import InputText from "../../ui-components/commons/InputText";
+import { toast } from '../../ui-components/commons/Toast';
 
 const Login: React.FC = () => {
   const { push } = useRouter();

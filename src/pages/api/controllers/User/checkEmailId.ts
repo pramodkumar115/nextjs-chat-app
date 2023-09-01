@@ -1,8 +1,8 @@
-import { logger, ncOptions } from "@/pages/lib/middlewares";
-import { database } from "@/pages/lib/mongo";
+import { logger, ncOptions } from "@/server/lib/middlewares";
+import { database } from "@/server/lib/mongo";
 import { NextApiRequest, NextApiResponse } from "next";
 import { createRouter } from "next-connect";
-import UserService from "../../services/user.services";
+import UserService from "../../../../server/services/user.services";
 
 const router: any = createRouter<NextApiRequest, NextApiResponse>();
 router.use(logger);

@@ -1,8 +1,8 @@
-import { logger, ncOptions } from "@/pages/lib/middlewares";
-import { database } from "@/pages/lib/mongo";
+import { logger, ncOptions } from "@/server/lib/middlewares";
+import { database } from "@/server/lib/mongo";
 import { NextApiRequest, NextApiResponse } from "next";
 import { createRouter } from "next-connect";
-import { getChatSession } from "../../services/chat.service";
+import { getChatSession } from "../../../../server/services/chat.service";
 
 
 const router: any = createRouter<NextApiRequest, NextApiResponse>();

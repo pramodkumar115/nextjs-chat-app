@@ -1,11 +1,11 @@
 import './globals.css'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
-import Header from './commons/header'
-import Footer from './commons/footer'
+import Header from '../ui-components/commons/header'
+import Footer from '../ui-components/commons/footer'
 import Head from 'next/head'
 import Link from 'next/link'
-import NavLink from './commons/NavLink'
+import NavLink from '../ui-components/commons/NavLink'
 
 
 const inter = Inter({ subsets: ['latin'] })
