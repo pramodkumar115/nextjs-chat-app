@@ -1,9 +1,6 @@
 'use client'
-import Card from "../commons/Card";
-import CardContent from "../commons/CardContent";
-import CardHeader from "../commons/CardHeader";
-import Chat from "./Chat";
-import UsersList from "./UsersList";
+import Chat from "@/ui-components/Chat";
+import UsersList from "@/ui-components/UsersList";
 
 import { redirect } from "next/navigation";
 import { CookiesProvider, useCookies } from "react-cookie";
@@ -25,29 +22,27 @@ export default function HomePage() {
                 "content-type": "application/x-www-form-urlencoded",
             },
         }).then(async (result) => result.json())
-        .then(result => setChatSession(result));
+            .then(result => setChatSession(result));
     }
 
-    
+
     if (!cookies.user) {
         redirect("/login");
     } else {
-        return <div className={"w-full lg:w-4/5 md:4/5 mx-auto p-4"}>
-                <Card className={"p-0"}>
-                    <CardContent className={"p-0"}>
-                        <div className={"flex box-border"}>
-                            <div className={"p-2 w-1/3 border-e border-gray-300"}>
-                                <UsersList 
-                                loggedInUser={cookies.user} 
-                                chatSession={chatSession} 
-                                createChatSession={createChatSession}/>
-                            </div>
-                            <div className={"p-2 w-2/3"}>
-                                <Chat loggedInUser={cookies.user} chatSession={chatSession}/>
-                            </div>
-                        </div>
-                    </CardContent>
-                </Card>
+        return <div className={"w-full lg:w-4/5 md:4/5 mx-auto"}>
+
+            <div className={"flex box-border h-[calc(100vh-200px)]"}>
+                <div className={"md:block flex-1 border-e border-gray-300 hidden"}>
+                    <UsersList
+                        loggedInUser={cookies.user}
+                        chatSession={chatSession}
+                        createChatSession={createChatSession} />
+                </div>
+                <div className={"flex-3 w-full"}>
+                    <Chat loggedInUser={cookies.user} chatSession={chatSession} setChatSession={setChatSession}/>
+                </div>
             </div>
+
+        </div>
     }
 }
